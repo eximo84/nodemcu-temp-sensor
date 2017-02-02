@@ -16,3 +16,10 @@ client_gateway=""
 -- In milliseconds. Remember that the sensor reading, 
 -- reboot and wifi reconnect takes a few seconds
 time_between_sensor_readings = 60000
+
+--- MQTT ---
+mqtt_broker_ip = ""     
+mqtt_broker_port = 1883
+mqtt_username = ""
+mqtt_password = ""
+mqtt_client_id = ""
