@@ -2,13 +2,12 @@
 dofile("settings.lua")
 
 function startup()
-    if file.open("init.lua") == nil then
-      print("init.lua deleted")
-    else
-      print("Running")
-      file.close("init.lua")
---      dofile("temp-sensor.lua")
-    end
+    if abort == true then
+        print('startup aborted')
+        return
+        end
+    print('in startup')
+    -- dofile("temp_sensor.lua")
 end
 
 --init.lua
@@ -24,8 +23,8 @@ tmr.alarm(1, 1000, 1, function()
     else 
         tmr.stop(1)
         print("Config done, IP is "..wifi.sta.getip())
-        print("You have 5 seconds to abort Startup")
-        print("Waiting...")
-        tmr.alarm(0,5000,0,startup)
     end 
  end)
+
+abort = false
+tmr.alarm(0,5000,0,startup)
