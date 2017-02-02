@@ -15,7 +15,8 @@ end
 wifi.sta.disconnect()
 print("set up wifi mode")
 wifi.setmode(wifi.STATION)
-wifi.sta.config(SSID,PASSWORD,0)
+wifi.setphymode(wifi_signal_mode)
+wifi.sta.config(wifi_SSID,wifi_password,0)
 wifi.sta.connect()
 tmr.alarm(1, 1000, 1, function() 
     if wifi.sta.getip()== nil then 
