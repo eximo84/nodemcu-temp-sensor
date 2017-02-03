@@ -12,8 +12,8 @@ Small temperature sensor that sends the current temperature reading to an MQTT b
 
 Black = Ground
 Red = 3.3 V Power
-Blue = Rest (Enables Deep Sleep)
-Yellow = Data
+Blue = Rst to D0 (Enables Deep Sleep)
+Yellow = Data connected to D4
 
 ----------
 
